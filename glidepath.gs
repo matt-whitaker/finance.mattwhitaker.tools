@@ -11,16 +11,18 @@ function createGlidePath(target, glidepath) {
 
     // too far out or after final threshold
     if (horizon >= glidepath[0][0]) {
-      return RISK_PROFILE + glidepath[0][1];
+      return [glidepath[0][1], glidepath[0][2]];
     } else if (horizon <= glidepath[glidepath.length - 1][0]) {
-      return RISK_PROFILE + glidepath[glidepath.length - 1][1];
+      return [glidepath[glidepath.length - 1][1], glidepath[glidepath.length - 1][2]];
     }
 
     // which two thresholds are we between then
-    // 
     for (var i = 0; i < glidepath.length - 1; i++) {
       if (horizon <= glidepath[i][0] && horizon >= glidepath[i + 1][0]) {
-        return RISK_PROFILE + glidepath[i][1] + ((glidepath[i + 1][1] - glidepath[i][1]) / (glidepath[i + 1][0] - glidepath[i][0]) * (horizon - glidepath[i][0])) ;
+        return [
+          glidepath[i][1] + ((glidepath[i + 1][1] - glidepath[i][1]) / (glidepath[i + 1][0] - glidepath[i][0]) * (horizon - glidepath[i][0])),
+          glidepath[i][2] + ((glidepath[i + 1][2] - glidepath[i][2]) / (glidepath[i + 1][0] - glidepath[i][0]) * (horizon - glidepath[i][0]))
+        ];
       }
     }
   };
