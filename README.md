@@ -3,7 +3,7 @@
 A collection of offline web tools for finances
 
 ## Rebalance Calculator
-A quick prototype of an investment planning tool I originally created in Google Sheets with Google AppsScript. This applies the same
-underlying logic I put together there to an offline PWA using Create React App, Tailwind, and Daisy UI. Doesn't allow
-for much customization beyond the number of entries at each hierarchy.
+A quick prototype of an investment planning tool I originally created in Google Sheets with Google AppsScript. Provides a basic
+use case for planning a portfolio's allocation, and re-balancing. Built as a Single Page Application (SPA) and Progressive Web App (PWA)
+ using Vite (React/TS template), Tailwind, and Daisy UI.
 
