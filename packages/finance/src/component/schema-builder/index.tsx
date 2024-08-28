@@ -8,11 +8,11 @@ import useFormats from "../useFormats.ts";
 import {Fragment} from "react";
 import GridTitleRow from "../grid-title-row";
 
-export type SchemaBuilderProps = { schema: Schema,  };
-export default function SchemaBuilder({ schema }: SchemaBuilderProps) {
+export type SchemaBuilderProps = { schema: Schema, className?: string; };
+export default function SchemaBuilder({ schema, className }: SchemaBuilderProps) {
     const { percent } = useFormats();
     return (
-        <GridLayout className="w-[340px]">
+        <GridLayout className={classNames("w-[340px]", [className])}>
             <GridTitleRow>&nbsp;</GridTitleRow>
             {schema.partitions.map((partition) => (
                 <Fragment key={partition.name}>

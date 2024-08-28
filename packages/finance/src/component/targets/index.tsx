@@ -8,12 +8,12 @@ import classNames from "classnames";
 import GridLayout from "../grid-layout";
 import useFormats from "../useFormats.ts";
 
-export type TargetsProps = { schema: Schema; positions: Map<string, Position>; totalValue: number }
-export default function Targets({ schema, totalValue }: TargetsProps) {
+export type TargetsProps = { schema: Schema; positions: Map<string, Position>; totalValue: number; className?: string; }
+export default function Targets({ schema, totalValue, className }: TargetsProps) {
     const { dollar } = useFormats();
 
     return (
-        <GridLayout className="w-[120px]">
+        <GridLayout className={classNames("w-[120px]", [className])}>
             <GridTitleRow className="text-right">
                 <div className="col-start-1 col-span-1 pr-1">{dollar(totalValue)}</div>
             </GridTitleRow>

@@ -8,12 +8,12 @@ import useFormats from "../useFormats.ts";
 import {Fragment} from "react";
 import GridTitleRow from "../grid-title-row";
 
-export type ActualsProps = { schema: Schema; positions: Map<string, Position>; totalValue: number }
-export default function Actuals({ schema, positions, totalValue }: ActualsProps) {
+export type ActualsProps = { schema: Schema; positions: Map<string, Position>; totalValue: number; className?: string; }
+export default function Actuals({ schema, positions, totalValue, className }: ActualsProps) {
     const { dollar } = useFormats();
 
     return (
-        <GridLayout className="w-[120px]">
+        <GridLayout className={classNames("w-[120px]", [className])}>
             <GridTitleRow className="text-right">
                 <div className="col-start-1 col-span-1 pr-1">{dollar(totalValue)}</div>
             </GridTitleRow>

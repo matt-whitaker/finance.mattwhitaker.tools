@@ -2,7 +2,11 @@
 export default function useFormats() {
     return {
         dollar(value: number) {
-            return value ? `$${value?.toLocaleString("en-US", { maximumFractionDigits: 2 })}` : "--";
+            if (value) {
+                const prefix = value >= 0 ? "$" : "-$";
+                return `${prefix}${Math.abs(value).toLocaleString("en-US", { maximumFractionDigits: 2 })}`
+            }
+            return "--";
         },
         quantity(value: number) {
             return value?.toFixed(2) ?? "--";

@@ -13,11 +13,11 @@ export default function InputPercent({ className, weight, change }: InputPercent
         <div className={classNames("self-center pl-1 pr-2 relative", [className])}>
             <input
                 onChange={onChange}
-                className="py-1 w-full input input-ghost input-xs text-right pr-6"
+                className="w-full input input-ghost input-xs text-right pr-6 relative top-[-1px]"
                 type="text"
                 value={`${weight.toFixed(2)}`}
             />
-            <label className="h-full absolute right-4 top-0.5 text-xs leading-10 flex items-center pb-0.5">%</label>
+            <label className="h-full absolute right-4 top-[2px] text-xs leading-10 flex items-center pb-0.5">%</label>
         </div>
     );
 }

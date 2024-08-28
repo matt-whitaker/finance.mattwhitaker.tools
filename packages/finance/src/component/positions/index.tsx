@@ -8,11 +8,11 @@ import useFormats from "../useFormats.ts";
 import {Fragment} from "react";
 import GridTitleRow from "../grid-title-row";
 
-export type PositionsProps = { schema: Schema; positions: Map<string, Position>; totalValue: number }
-export default function Positions({ schema, positions }: PositionsProps) {
+export type PositionsProps = { schema: Schema; positions: Map<string, Position>; totalValue: number; className?: string; }
+export default function Positions({ schema, positions, className }: PositionsProps) {
     const { dollar, quantity } = useFormats();
     return (
-        <GridLayout className="w-[160px]">
+        <GridLayout className={classNames("w-[160px]", [className])}>
             <GridTitleRow>
                 <div className="col-start-1 col-span-1">&nbsp;</div>
             </GridTitleRow>

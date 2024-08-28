@@ -17,9 +17,9 @@ export default function App() {
             <div className="flex">
                 <SchemaBuilder schema={schema} />
                 <Adjustments schema={schema} positions={positionsMap} totalValue={totalValue} />
-                <Targets schema={schema} positions={positionsMap} totalValue={totalValue} />
+                <Targets schema={schema} positions={positionsMap} totalValue={totalValue} className="border-l-2 border-double border-primary" />
                 <Actuals schema={schema} positions={positionsMap} totalValue={totalValue} />
-                <Positions schema={schema} positions={positionsMap} totalValue={totalValue} />
+                <Positions schema={schema} positions={positionsMap} totalValue={totalValue} className="border-x-2 border-double border-primary" />
             </div>
         </Shell>
     )
